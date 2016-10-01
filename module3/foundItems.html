@@ -1,0 +1,12 @@
+<div class="found-items">
+  <div class="row item" ng-repeat="item in list.items">
+    <!-- <span> -->
+    <div class="item-name">{{ item.name }}  <span class="item-category"> {{ item.short_name }} </span> <span class="item-category glyphicon glyphicon-tag"></span>
+      <button class="btn btn-default remove-button .col-xs-6 .col-md-4" ng-click="list.onRemove({index: $index});"><span class="glyphicon glyphicon-remove red"></span> Don't want this one!</button>
+    </div>
+    <div class="item-description">{{item.description}}</div>
+  <!-- </span> -->
+
+  </div>
+<div class="error" ng-if="list.isEmpty();">Nothing found</div>
+</div>
