@@ -1,0 +1,29 @@
+<div class="container" ng-if="!myinfoCtrl.myInfo.favorite">
+  Not Signed Up Yet.
+  <a ui-sref="public.signup"> Sign up Now!</a>
+</div>
+
+<div class="container" ng-if="myinfoCtrl.myInfo.favorite">
+  <div class="row myinfo">
+  <h3>Your registered information is:</h3>
+  </div>
+  <div class="row">
+
+  <div class="col-md-6 myinfo-text">
+    <!-- <div>&nbsp;</div>
+    <div>&nbsp;</div> -->
+    <div><label>Short name: </label> <span class="myinfo-item"> {{ myinfoCtrl.myInfo.firstName }} </span> </div>
+    <div><label>Last name: </label> <span class="myinfo-item"> {{ myinfoCtrl.myInfo.lastName }} </span>  </div>
+    <div><label>Email: </label> <span class="myinfo-item"> {{ myinfoCtrl.myInfo.email }} </span> </div>
+    <div><label>Phone: </label> <span class="myinfo-item"> {{ myinfoCtrl.myInfo.phone }} </span> </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="form-group row">
+      <label>You selected this item as your favorite: </label>
+    </div>
+    <menu-item  menu-item="myinfoCtrl.myInfo.favorite"></menu-item>
+  <div>
+
+  </div>
+</div>
