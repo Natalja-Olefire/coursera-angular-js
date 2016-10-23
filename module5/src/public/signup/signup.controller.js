@@ -38,7 +38,7 @@ function SignupController(myInfo, PersonalisationService, MenuService) {
       return;
     }
 
-    if (short_name && short_name.length >= 5) { // go to the server only if we have more than 2 symbols
+    if (short_name && short_name.length >= 2) { // go to the server only if we have more than 2 symbols
       var promise = MenuService.getMenuItem(short_name.toUpperCase());
       promise
         .then(function (result) { // result found
@@ -46,7 +46,7 @@ function SignupController(myInfo, PersonalisationService, MenuService) {
             $ctrl.menuItemFound=true;
         })
         .catch(function(response) { //nothing is found
-          $ctrl.myInfo.favorite=null;
+          // $ctrl.myInfo.favorite=null;
           $ctrl.menuItemFound=false;
         });
     }; // if length >= 2
