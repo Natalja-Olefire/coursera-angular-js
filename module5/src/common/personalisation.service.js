@@ -9,7 +9,6 @@ function PersonalisationService($http, ApiPath) {
   var service = this;
 
   service.getUserInfo = function () {
-    console.log(service.myInfo);
     if (!service.myInfo) {
       service.myInfo = {};
       service.myInfo.favorite=null;

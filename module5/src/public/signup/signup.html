@@ -81,8 +81,6 @@
               ng-model="signupCtrl.myInfo.favorite.short_name"
               ng-change="signupCtrl.lookupMenuItem();"
               ng-init="signupCtrl.lookupMenuItem();"
-              ng-minlength="2"
-              ng-maxlength="2"
               required> <br>
         </div>
     </div>
@@ -91,7 +89,7 @@
     <div  class="form-group row">
       <div class="col-sm-12">
         <button class="form-control btn btn-primary signup-button"
-          ng-disabled="signupForm.$invalid"
+          ng-disabled="signupForm.$invalid || !signupCtrl.menuItemFound"
           ng-click="signupCtrl.signup()">Sign up</button>
       </div>
     </div>
