@@ -33,12 +33,12 @@ function SignupController(myInfo, PersonalisationService, MenuService) {
 
     var short_name = $ctrl.myInfo.favorite.short_name;
     $ctrl.menuItemLookedUp = short_name; //previous item, that we tried to find
-    if (short_name && short_name.length > 2) { //short name is longer than 2 symbols, don't go to server and reset it
+    if (short_name && short_name.length > 5) { //short name is longer than 2 symbols, don't go to server and reset it
       $ctrl.myInfo.favorite=null;
       return;
     }
 
-    if (short_name && short_name.length == 2) { // go to the server only if we have 2 symbols
+    if (short_name && short_name.length >= 5) { // go to the server only if we have more than 2 symbols
       var promise = MenuService.getMenuItem(short_name.toUpperCase());
       promise
         .then(function (result) { // result found
@@ -49,7 +49,7 @@ function SignupController(myInfo, PersonalisationService, MenuService) {
           $ctrl.myInfo.favorite=null;
           $ctrl.menuItemFound=false;
         });
-    }; // if length == 2
+    }; // if length >= 2
   };
 }
 
