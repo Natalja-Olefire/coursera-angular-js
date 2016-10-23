@@ -160,8 +160,11 @@ h3.menu-item-title {
   padding-left: 50px;
 }
 
+.myinfo-margin-top {
+  margin-top: 60px;  
+}
+
 .myinfo-text {
-  margin-top: 50px;
   padding-left: 50px;
 }
 

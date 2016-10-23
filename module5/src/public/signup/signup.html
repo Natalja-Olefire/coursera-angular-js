@@ -5,119 +5,136 @@
   <div class="col-md-6 col-sm">
 
   <!-- faorm -->
-  <form autocomplete="off" name='signupForm' class="signup-form" novalidate>
+  <form autocomplete="off" name='signupForm' novalidate>
 
-    <div class="form-group row">
+    <div  class="signup-form">
+      <div class="form-group row">
 
-      <!-- first name -->
-      <label class="col-sm-3 col-form-label signup-label" for="firstname">First name: </label>
-      <div class="col-sm-9">
-        <input class="form-control signup-input" type="text" id="firstname" name="firstname" placeholder="First name"
-            ng-model="signupCtrl.myInfo.firstName"
-            ng-change="signupCtrl.dirty();"
-            required
-            minlength="4"
-            ng-maxlength="10"> <br>
-        <small class="form-text text-muted" ng-if="(signupForm.firstname.$error.minlength || signupForm.firstname.$error.required) && signupForm.firstname.$touched">
-              User short name must be at least 4 characters long</small>
-        <small class="form-text text-muted" ng-if="signupForm.firstname.$error.maxlength && signupForm.firstname.$touched">
-              User short name must not be longer than 10 characters</small>
-      </div>
-    </div>
-
-    <!-- last name -->
-    <div  class="form-group row">
-        <label class="col-sm-3 col-form-label signup-label" for="lastname">Last name: </label>
+        <!-- first name -->
+        <label class="col-sm-3 col-form-label signup-label" for="firstname">First name: </label>
         <div class="col-sm-9">
-          <input class="form-control signup-input" type="text" name="lastname" id="lastname" placeholder="Last name"
-              ng-model="signupCtrl.myInfo.lastName"
+          <input class="form-control signup-input" type="text" id="firstname" name="firstname" placeholder="First name"
+              ng-model="signupCtrl.myInfo.firstName"
               ng-change="signupCtrl.dirty();"
               required
               minlength="4"
-              ng-maxlength="30"> <br>
-          <small class="form-text text-muted"
-                ng-if="(signupForm.lastname.$error.minlength || signupForm.lastname.$error.required) && signupForm.lastname.$touched">
-                User short name must be at least 4 characters long
-          </small>
-          <small class="form-text text-muted" ng-if="signupForm.lastname.$error.maxlength && signupForm.lastname.$touched">
-                User short name must not be longer than 30 characters
-          </small>
-      </div>
-    </div>
-
-    <!-- email -->
-    <div  class="form-group row">
-        <label class="col-sm-3 col-form-label signup-label" for="email">Email: </label>
-        <div class="col-sm-9">
-          <input class="form-control signup-input" type="email" name="email" id="email" placeholder="Email"
-              ng-model="signupCtrl.myInfo.email"
-              ng-change="signupCtrl.dirty();"
-              required> <br>
-          <small class="form-text text-muted" ng-if="signupForm.email.$invalid && signupForm.email.$touched">
-              Must be a valid email address: handle@domain format
-          </small>
-      </div>
-    </div>
-
-    <!-- phone -->
-    <div  class="form-group row">
-        <label class="col-sm-3 col-form-label signup-label" for="phone">Phone: </label>
-        <div class="col-sm-9">
-          <input class="form-control signup-input" type="text" name="phone" id="phone" placeholder="Phone ###-###-####"
-              ng-model="signupCtrl.myInfo.phone"
-              ng-change="signupCtrl.dirty();"
-              pattern="(\d{3})-(\d{3})-(\d{4})"> <br>
-          <small  class="form-text text-muted" ng-if="signupForm.phone.$invalid && signupForm.phone.$touched">
-                Phone must be in the format ###-###-####.
-          </small>
+              ng-maxlength="10"> <br>
+          <small class="form-text text-muted" ng-if="(signupForm.firstname.$error.minlength || signupForm.firstname.$error.required) && signupForm.firstname.$touched">
+                User short name must be at least 4 characters long</small>
+          <small class="form-text text-muted" ng-if="signupForm.firstname.$error.maxlength && signupForm.firstname.$touched">
+                User short name must not be longer than 10 characters</small>
         </div>
-    </div>
-
-    <!-- favorite -->
-    <div  class="form-group row">
-        <label class="col-sm-3 col-form-label signup-label" for="favorite">Favorite menu item: </label>
-        <div class="col-sm-9">
-          <input class="form-control signup-input" type="text" name="favorite" id="favorite" placeholder="Favorite menu item"
-              ng-model="signupCtrl.myInfo.favorite.short_name"
-              ng-change="signupCtrl.lookupMenuItem();"
-              ng-init="signupCtrl.lookupMenuItem();"
-              required> <br>
-        </div>
-    </div>
-
-    <!-- submit button -->
-    <div  class="form-group row">
-      <div class="col-sm-12">
-        <button class="form-control btn btn-primary signup-button"
-          ng-disabled="signupForm.$invalid || !signupCtrl.menuItemFound"
-          ng-click="signupCtrl.signup()">Sign up</button>
       </div>
-    </div>
 
-    <!-- Information saved message -->
-    <div class="form-group row" ng-if="signupCtrl.saved">Your information has been saved</div>
-  </form>
+      <!-- last name -->
+      <div  class="form-group row">
+          <label class="col-sm-3 col-form-label signup-label" for="lastname">Last name: </label>
+          <div class="col-sm-9">
+            <input class="form-control signup-input" type="text" name="lastname" id="lastname" placeholder="Last name"
+                ng-model="signupCtrl.myInfo.lastName"
+                ng-change="signupCtrl.dirty();"
+                required
+                minlength="4"
+                ng-maxlength="30"> <br>
+            <small class="form-text text-muted"
+                  ng-if="(signupForm.lastname.$error.minlength || signupForm.lastname.$error.required) && signupForm.lastname.$touched">
+                  User short name must be at least 4 characters long
+            </small>
+            <small class="form-text text-muted" ng-if="signupForm.lastname.$error.maxlength && signupForm.lastname.$touched">
+                  User short name must not be longer than 30 characters
+            </small>
+        </div>
+      </div>
+
+      <!-- email -->
+      <div  class="form-group row">
+          <label class="col-sm-3 col-form-label signup-label" for="email">Email: </label>
+          <div class="col-sm-9">
+            <input class="form-control signup-input" type="email" name="email" id="email" placeholder="Email"
+                ng-model="signupCtrl.myInfo.email"
+                ng-change="signupCtrl.dirty();"
+                required> <br>
+            <small class="form-text text-muted" ng-if="signupForm.email.$invalid && signupForm.email.$touched">
+                Must be a valid email address: handle@domain format
+            </small>
+        </div>
+      </div>
+
+      <!-- phone -->
+      <div  class="form-group row">
+          <label class="col-sm-3 col-form-label signup-label" for="phone">Phone: </label>
+          <div class="col-sm-9">
+            <input class="form-control signup-input" type="text" name="phone" id="phone" placeholder="Phone ###-###-####"
+                ng-model="signupCtrl.myInfo.phone"
+                ng-change="signupCtrl.dirty();"
+                pattern="(\d{3})-(\d{3})-(\d{4})"> <br>
+            <small  class="form-text text-muted" ng-if="signupForm.phone.$invalid && signupForm.phone.$touched">
+                  Phone must be in the format ###-###-####.
+            </small>
+          </div>
+      </div>
+
+      <!-- favorite -->
+      <div  class="form-group row">
+          <label class="col-sm-3 col-form-label signup-label" for="favorite">Favorite menu item: </label>
+          <div class="col-sm-9">
+            <input class="form-control signup-input" type="text" name="favorite" id="favorite" placeholder="Favorite menu item"
+                ng-model="signupCtrl.myInfo.favorite.short_name"
+                ng-change="signupCtrl.lookupMenuItem();"
+                ng-init="signupCtrl.lookupMenuItem();"
+                required> <br>
+          </div>
+      </div>
+
+      <!-- submit button -->
+      <div  class="form-group row">
+        <div class="col-sm-12">
+          <button class="form-control btn btn-primary signup-button"
+            ng-disabled="signupForm.$invalid || !signupCtrl.menuItemFound"
+            ng-click="signupCtrl.signup()">Sign up</button>
+        </div>
+      </div>
+
+      <!-- Information saved message -->
+      <div  class="form-group row">
+        <div class="col-sm-12">
+            <label class="col-form-label signup-label" ng-if="signupCtrl.saved">Your information has been saved</label>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+
 </div>
 
+<div  class="signup-form">
 <!-- Not found menu item message, second column -->
-<div ng-if="!signupCtrl.menuItemFound && signupCtrl.menuItemLookedUp" class="col-md-6">
-  <div class="col-sm-12">
+  <div ng-if="!signupCtrl.menuItemFound && signupCtrl.menuItemLookedUp" class="col-md-6">
     <div class="form-group row">
-      <label>Menu item "{{signupCtrl.menuItemLookedUp}}" is not found.</label>
-      <label>It should be 2 symbols long, and exist in our database!</label>
-    </div>
-</div>
-</div>
+      <div class="col-sm-12">
+        <label class="col-form-label signup-label">Menu item "{{signupCtrl.menuItemLookedUp}}" is not found.</label>
+        <label class="col-form-label signup-label">It should be 2 symbols long, and exist in our database!</label>
+      </div>
+  </div>
+  </div>
 
-<!-- Found menu item, second column -->
-<div ng-if="signupCtrl.menuItemFound" class="col-md-6">
-  <div class="col-sm-12">
+  <!-- Found menu item, second column -->
+  <div ng-if="signupCtrl.menuItemFound" class="col-md-6">
     <div class="form-group row">
-      <label class="col-form-label signup-label">You selected this item as your favorite: </label>
-      <menu-item class="form-group row signup-favorite-item" menu-item="signupCtrl.myInfo.favorite"></menu-item>
+      <div class="col-sm-12">
+        <label class="col-form-label signup-label">You selected this item as your favorite: </label>
+        <!-- <menu-item class="signup-favorite-item" menu-item="signupCtrl.myInfo.favorite"></menu-item> -->
+      </div>
     </div>
- <div>
-</div>
+    <div class="form-group row">
+      <div class="col-sm-12">
+        <!-- <label class="col-form-label signup-label">You selected this item as your favorite: </label> -->
+        <menu-item class="signup-favorite-item" menu-item="signupCtrl.myInfo.favorite"></menu-item>
+      </div>
+    </div>
+  </div>
 
+</div>
 </div> <!-- row -->
 </div> <!-- container -->
