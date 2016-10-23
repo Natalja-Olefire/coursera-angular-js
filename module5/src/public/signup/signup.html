@@ -81,6 +81,8 @@
               ng-model="signupCtrl.myInfo.favorite.short_name"
               ng-change="signupCtrl.lookupMenuItem();"
               ng-init="signupCtrl.lookupMenuItem();"
+              ng-minlength="2"
+              ng-maxlength="2"
               required> <br>
         </div>
     </div>
