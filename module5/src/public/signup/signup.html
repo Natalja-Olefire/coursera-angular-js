@@ -38,7 +38,7 @@
                 ng-maxlength="30"> <br>
             <small class="form-text text-muted"
                   ng-if="(signupForm.lastname.$error.minlength || signupForm.lastname.$error.required) && signupForm.lastname.$touched">
-                  User long name must be at least 4 characters long
+                  User last name must be at least 4 characters long
             </small>
             <small class="form-text text-muted" ng-if="signupForm.lastname.$error.maxlength && signupForm.lastname.$touched">
                   User long name must not be longer than 30 characters
